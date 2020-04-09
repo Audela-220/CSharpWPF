@@ -6,7 +6,15 @@
         xmlns:local="clr-namespace:WPFApp01"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
-    <Grid>
+    <Grid Background="{DynamicResource {x:Static SystemColors.AppWorkspaceBrushKey}}" >
+        <TextBlock 
+            FontSize="72" 
+            FontFamily="Times New Roman" 
+            FontStyle="Italic" 
+            Foreground="Yellow" 
+            HorizontalAlignment="Center" 
+            VerticalAlignment="Center" 
+            Text="Hello World!"/>
         
     </Grid>
 </Window>

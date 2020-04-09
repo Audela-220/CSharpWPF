@@ -1,0 +1,72 @@
+﻿<Window x:Class="StyleApp1.Views.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:StyleApp1.ViewModels"
+        xmlns:vw="clr-namespace:StyleApp1.Views"
+        xmlns:b="clr-namespace:StyleApp1.Views.Behaviors"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="400" Width="300">
+    <Window.DataContext>
+        <local:MainViewModel/>
+    </Window.DataContext>
+    <StackPanel>
+        <Button Content="Sample1" 
+                Command="{Binding Sample1Command}"
+                b:OpenDialogBehavior.WindowType="{x:Type vw:Sample1}" 
+                b:OpenDialogBehavior.DataContext="{Binding Sample1}"
+                b:OpenDialogBehavior.Callback="{Binding Sample1DialogCallback}"
+                />
+        
+        <TextBlock Text="デザイン確認のための最初のパターン。中央にボタンのみ。"/>
+        <Separator/>
+        <Button Content="Sample2" 
+                Command="{Binding Sample2Command}"
+                b:OpenDialogBehavior.WindowType="{x:Type vw:Sample2}" 
+                b:OpenDialogBehavior.DataContext="{Binding Sample2}"
+                b:OpenDialogBehavior.Callback="{Binding Sample2DialogCallback}"
+                />
+        <TextBlock Text="Buttonコントロールに対して、いろいろStyleを指定する"/>
+        <Separator/>
+        <Button Content="Sample3" 
+                Command="{Binding Sample3Command}"
+                b:OpenDialogBehavior.WindowType="{x:Type vw:Sample3}" 
+                b:OpenDialogBehavior.DataContext="{Binding Sample3}"
+                b:OpenDialogBehavior.Callback="{Binding Sample3DialogCallback}"
+                />
+        <TextBlock Text="Styleを指定する場合のSetterの入れ子"/>
+        <Separator/>
+        <Button Content="Trigger1" 
+                Command="{Binding Trigger1Command}"
+                b:OpenDialogBehavior.WindowType="{x:Type vw:Trigger1View}" 
+                b:OpenDialogBehavior.DataContext="{Binding Trigger1ViewModel}"
+                b:OpenDialogBehavior.Callback="{Binding Trigger1Callback}"
+                />
+        <TextBlock Text="Triggerによって動的にデザインの変更"/>
+        <Separator/>
+        <Button Content="Trigger2" 
+                Command="{Binding Trigger2Command}"
+                b:OpenDialogBehavior.WindowType="{x:Type vw:Trigger2View}" 
+                b:OpenDialogBehavior.DataContext="{Binding Trigger2ViewModel}"
+                b:OpenDialogBehavior.Callback="{Binding Trigger2Callback}"
+                />
+        <TextBlock Text="Buttonへのデザインの適用"/>
+        <Separator/>
+        <Button Content="Trigger3" 
+                Command="{Binding Trigger3Command}"
+                b:OpenDialogBehavior.WindowType="{x:Type vw:Trigger3View}" 
+                b:OpenDialogBehavior.DataContext="{Binding Trigger3ViewModel}"
+                b:OpenDialogBehavior.Callback="{Binding Trigger3Callback}"
+                />
+        <TextBlock Text="デザインの定義と指定"/>
+        <Separator/>
+        <Button Content="Trigger4" 
+                Command="{Binding Trigger4Command}"
+                b:OpenDialogBehavior.WindowType="{x:Type vw:Trigger4View}" 
+                b:OpenDialogBehavior.DataContext="{Binding Trigger4ViewModel}"
+                b:OpenDialogBehavior.Callback="{Binding Trigger4Callback}"
+                />
+        <TextBlock Text="Buttonすべてへのデザイン適用"/>
+    </StackPanel>
+</Window>

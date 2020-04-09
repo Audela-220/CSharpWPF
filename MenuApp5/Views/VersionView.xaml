@@ -1,0 +1,20 @@
+﻿<Window x:Class="MenuApp5.Views.VersionView"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:b="clr-namespace:MenuApp5.Views.Behaviors"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:MenuApp5.Views"
+        mc:Ignorable="d"
+        Title="{Binding Title}" SizeToContent="WidthAndHeight"
+        b:CloseWindowAttachedBehavior.Close="{Binding CloseWindow}">
+    <StackPanel Margin="15">
+        <TextBlock Text="{Binding ProductName}" FontSize="20" TextAlignment="Center"/>
+        <TextBlock Text="{Binding Version}" TextAlignment="Center"/>
+        <Separator/>
+        <TextBlock Text="{Binding Copyright}" TextAlignment="Center"/>
+        <Button Content="OK" 
+                Command="{Binding CloseCommand}"
+        />
+    </StackPanel>
+</Window>

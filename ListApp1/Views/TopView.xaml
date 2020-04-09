@@ -1,0 +1,87 @@
+﻿<Window x:Class="ListApp1.Views.TopView"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ListApp1.ViewModels"
+        xmlns:vw="clr-namespace:ListApp1.Views"
+        xmlns:b="clr-namespace:ListApp1.Views.Behaviors"
+        mc:Ignorable="d"
+        Title="TopView" Height="420" Width="300">
+    <Window.DataContext>
+        <local:TopViewModel/>
+    </Window.DataContext>
+    <StackPanel>
+        <Button Content="FirstView" 
+                Command="{Binding FirstViewCommand}"
+                b:OpenDialogBehavior.WindowType="{x:Type vw:FirstView}" 
+                b:OpenDialogBehavior.DataContext="{Binding FirstViewModel}"
+                b:OpenDialogBehavior.Callback="{Binding FirstViewCallback}"
+               />
+        <TextBlock Text="一番最初のコード。（図6.1用）"/>
+        <Separator/>
+        <Button Content="SecondView" 
+                Command="{Binding SecondViewCommand}"
+                b:OpenDialogBehavior.WindowType="{x:Type vw:SecondView}" 
+                b:OpenDialogBehavior.DataContext="{Binding SecondViewModel}"
+                b:OpenDialogBehavior.Callback="{Binding SecondViewCallback}"
+                />
+        <TextBlock Text="ItemTemplateを利用。（図6.2用）"/>
+        <Separator/>
+        <Button Content="ThirdView" 
+                Command="{Binding ThirdViewCommand}"
+                b:OpenDialogBehavior.WindowType="{x:Type vw:ThirdView}"  
+                b:OpenDialogBehavior.DataContext="{Binding ThirdViewModel}"
+                b:OpenDialogBehavior.Callback="{Binding ThirdViewCallback}"
+                />
+        <TextBlock Text="ItemTemplateでScrollViewを指定する"/>
+        <Separator/>
+        <Button Content="FourthView" 
+                Command="{Binding FourthViewCommand}"
+                b:OpenDialogBehavior.WindowType="{x:Type vw:FourthView}"  
+                b:OpenDialogBehavior.DataContext="{Binding FourthViewModel}"
+                b:OpenDialogBehavior.Callback="{Binding FourthViewCallback}"
+                />
+        <TextBlock Text="ListBoxのカスタマイズ"/>
+        <Separator/>
+        <Button Content="FifthView" 
+                Command="{Binding FifthViewCommand}"
+                b:OpenDialogBehavior.WindowType="{x:Type vw:FifthView}"  
+                b:OpenDialogBehavior.DataContext="{Binding FifthViewModel}"
+                b:OpenDialogBehavior.Callback="{Binding FifthViewCallback}"
+                />
+        <TextBlock Text="ComboBoxのカスタマイズ"/>
+        <Separator/>
+        <Button Content="SixthView" 
+                Command="{Binding SixthViewCommand}"
+                b:OpenDialogBehavior.WindowType="{x:Type vw:SixthView}"  
+                b:OpenDialogBehavior.DataContext="{Binding SixthViewModel}"
+                b:OpenDialogBehavior.Callback="{Binding SixthViewCallback}"
+                />
+        <TextBlock Text="ListBox Add/Dell"/>
+        <Separator/>
+        <Button Content="SeventhView" 
+                Command="{Binding SeventhViewCommand}"
+                b:OpenDialogBehavior.WindowType="{x:Type vw:SeventhView}"  
+                b:OpenDialogBehavior.DataContext="{Binding SeventhViewModel}"
+                b:OpenDialogBehavior.Callback="{Binding SeventhViewCallback}"
+                />
+        <TextBlock Text="ListBox Add/Dell2"/>
+        <Separator/>
+        <Button Content="EigthView" 
+                Command="{Binding EighthViewCommand}"
+                b:OpenDialogBehavior.WindowType="{x:Type vw:EighthView}"  
+                b:OpenDialogBehavior.DataContext="{Binding EighthViewModel}"
+                b:OpenDialogBehavior.Callback="{Binding EighthViewCallback}"
+                />
+        <TextBlock Text="テキストを入力して、自動でスクロールする"/>
+        <Button Content="NinethView" 
+                Command="{Binding NinethViewCommand}"
+                b:OpenDialogBehavior.WindowType="{x:Type vw:NinethView}"  
+                b:OpenDialogBehavior.DataContext="{Binding NinethViewModel}"
+                b:OpenDialogBehavior.Callback="{Binding NinethViewCallback}"
+                />
+        <TextBlock Text="SelectChanged でボタンの状態変更"/>
+
+    </StackPanel>
+</Window>

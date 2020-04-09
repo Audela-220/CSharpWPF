@@ -1,0 +1,17 @@
+﻿<Window x:Class="UpperStringApp4.UpperStringView"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:UpperStringApp4"
+        mc:Ignorable="d"
+        Title="UpperStringView" Height="400" Width="400">
+    <Window.DataContext>
+        <local:UpperStringViewModel/>
+    </Window.DataContext>
+    <StackPanel>
+        <TextBox Text="{Binding InputString, UpdateSourceTrigger=PropertyChanged}" FontFamily="Meiryo UI" FontSize="36"/>
+        <TextBlock Text="{Binding UpperString}" FontFamily="Meiryo UI" FontSize="36"/>
+        <Button Content="クリア" Command="{Binding ClearCommand}" FontFamily="Meiryo UI" FontSize="36"/>
+    </StackPanel>
+</Window>

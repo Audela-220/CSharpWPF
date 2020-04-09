@@ -1,0 +1,41 @@
+﻿<Window x:Class="ListApp1.Views.SeventhView"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ListApp1.ViewModels"
+        mc:Ignorable="d"
+        Title="SeventhView" Height="300" Width="300">
+    <Window.DataContext>
+        <local:SeventhViewModel/>
+    </Window.DataContext>
+    <DockPanel>
+        <TextBlock DockPanel.Dock="Top">
+            ボタンで追加で下部のListBoxに表示する。
+            <LineBreak />
+            削除ボタンはListBoxの要素へ。
+        </TextBlock>
+        <Button DockPanel.Dock="Top" Content="追加" Command="{Binding AddCommand}" Margin="5"/>
+        
+        <ListBox ItemsSource="{Binding People}">
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    
+                    <StackPanel Orientation="Horizontal">
+                        <Button 
+                            Content="X" 
+                            Command="{Binding DataContext.DellCommand,RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type ListBox}}}"
+                            CommandParameter="{Binding .}"
+                            Margin="5"/>
+                        <StackPanel>
+                            <TextBlock Text="{Binding FullName}"/>
+                            <TextBlock Text="{Binding Age, StringFormat=({0})}"/>
+                        </StackPanel>
+                        
+                    </StackPanel>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
+    </DockPanel>
+
+</Window>
